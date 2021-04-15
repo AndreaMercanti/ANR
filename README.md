@@ -1,26 +1,11 @@
 # Code for CIKM 2018 paper
 
-Hello!
+This is a fork of the original implementation code "__ANR: Aspect-based Neural Recommender__" in CIKM 2018 for my personal needs, whose paper is 
+available [here](https://dl.acm.org/citation.cfm?id=3271810).
 
-Here's our implementation of the code used for "__ANR: Aspect-based Neural Recommender__" in CIKM 2018.
+For a quick overview of the paper, you can refer to these [slides](https://drive.google.com/open?id=1lLrOhHO8K9V-euVg0Ur2xtsKYhRPNyfb).
 
-The paper is available here: [Paper](https://dl.acm.org/citation.cfm?id=3271810)
-
-For a quick overview of the paper, you can refer to these slides:
-[ANR Slides](https://drive.google.com/open?id=1lLrOhHO8K9V-euVg0Ur2xtsKYhRPNyfb)
-
-For instructions on how to use the code, please refer to [\_\_\_README\_\_\_.txt](____README____.txt)!
-
-
-## Environment Setup
-
-1. Python 3.6.3
-2. PyTorch 0.3.0
-
-
-## Reference
-
-Please consider citing our work if you find it useful, thank you!
+If you too use in some ways or find useful its code, please consider to cite the work:
 
 ```
 @inproceedings{Chin:2018:AAN:3269206.3271810,
@@ -41,4 +26,18 @@ Please consider citing our work if you find it useful, thank you!
  keywords = {aspect-based recommendation, co-attention, neural attention, recommender systems},
 }
 ```
+
+## Environment Setup
+
+- Python 3.6.3
+- PyTorch 0.3.0
+
+## Walkthrough
+The author, in his experiments, used the [Amazon instant video dataset](http://jmcauley.ucsd.edu/data/amazon), while I used a personal dataset in mine. 
+The dataset was built ad hoc by running my [URB-RS](https://github.com/AndreaMercanti/URB-RS) repo and then stored in the `datasets` folder.
+
+1. I downloaded the Google's file for pretrained word embeddings [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit), unzipped and stored it in the upper folder
+2. I preprocessed, pretrained and finally trained and tested the data
+
+For more clarification on point 2, please, do refer to [\_\_\_README\_\_\_.txt](____README____.txt).
 

@@ -127,8 +127,8 @@ with codecs.open(REVIEW_JSON, 'r', encoding = 'utf-8', errors = 'ignore') as inF
 			user = d['user_id']
 			item = d['business_id']
 		else:
-			user = d['reviewerID']
-			item = d['asin']
+			user = d['user']
+			item = d['film_id']
 
 		interactions.append([user, item])
 
@@ -219,8 +219,8 @@ with codecs.open(REVIEW_JSON, 'r', encoding = 'utf-8', errors = 'ignore') as inF
 			user = d['user_id']
 			item = d['business_id']
 		else:
-			user = d['reviewerID']
-			item = d['asin']
+			user = d['user']
+			item = d['film_id']
 
 		if (hit( (user, item), users_dict, items_dict )):
 
@@ -230,9 +230,11 @@ with codecs.open(REVIEW_JSON, 'r', encoding = 'utf-8', errors = 'ignore') as inF
 				date = int(time.mktime(time.strptime(date, "%Y-%m-%d")))
 				text = simple_tokenizer(d['text'])
 			else:
-				rating = d['overall']
-				date = d['unixReviewTime']
-				text = simple_tokenizer(d['reviewText'])
+				rating = d['rating']
+				# date = d['unixReviewTime']
+				date = d['date']
+				date = int(time.mktime(time.strptime(date, "%Y/%m/%d")))
+				text = simple_tokenizer(d['review'])
 
 			interactions.append([user, item, rating, date, text])
 
